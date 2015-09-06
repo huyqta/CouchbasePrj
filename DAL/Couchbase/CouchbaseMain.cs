@@ -17,7 +17,7 @@ namespace DAL.Couchbase
             using (cluster = new Cluster(CouchbaseConfiguration.CBConfig))
             {
 
-                using (var bucket = cluster.OpenBucket())
+                using (var bucket = cluster.OpenBucket("default2"))
                 {
                     var document = new Document<dynamic>
                     {

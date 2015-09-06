@@ -14,7 +14,37 @@ namespace DAL.Couchbase
             Servers = new List<Uri>
                 {
                     new Uri("http://localhost:8091/pools")
+                },
+            UseSsl = false,
+            BucketConfigs = new Dictionary<string, BucketConfiguration>()
+            {
+                {
+                    "default2", new BucketConfiguration()
+                    {
+                        BucketName = "default2",
+                        UseSsl = false,
+                        Password = "",
+                        PoolConfiguration = new PoolConfiguration()
+                        {
+                            MaxSize = 10,
+                            MinSize = 5
+                        }
+                    }
+                },
+                {
+                    "default3", new BucketConfiguration()
+                    {
+                        BucketName = "default3",
+                        UseSsl = false,
+                        Password = "",
+                        PoolConfiguration = new PoolConfiguration()
+                        {
+                            MaxSize = 10,
+                            MinSize = 5
+                        }
+                    }
                 }
+            }
         };
     }
 }
