@@ -1,4 +1,5 @@
-﻿using Core.Couchbase;
+﻿using Core;
+using Couchbase.Configuration.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,15 @@ namespace Core.Repositories
 {
     public class CbRepository
     {
-        public void InitCouchbase()
-        {
-            if (CouchbaseConfig.CbCluster == null)
-            {
-                //var listUri = CouchbaseConfig.CouchbaseServer.Split('|').ToList();
-                //CouchbaseConfig.CbCluster.Configuration.Servers = listUri.ToList<Uri>();
-
-            }
-        }
+        //public void InitCouchbase()
+        //{
+        //    if (CouchbaseConfig.CbCluster == null)
+        //    {
+        //        var config = new ClientConfiguration
+        //        {
+        //            Servers = 
+        //        }
+        //    }
+        //}
     }
 }

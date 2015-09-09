@@ -14,29 +14,29 @@ namespace DAL.Couchbase
 
         public static string Test()
         {
-            using (cluster = new Cluster(CouchbaseConfiguration.CBConfig))
-            {
+            //using (cluster = new Cluster(CouchbaseConfiguration.CBConfig))
+            //{
 
-                using (var bucket = cluster.OpenBucket("default2"))
-                {
-                    var document = new Document<dynamic>
-                    {
-                        Id = "Hello2",
-                        Content = new
-                        {
-                            name = "Couchbase"
-                        }
-                    };
+            //    using (var bucket = cluster.OpenBucket("default2"))
+            //    {
+            //        var document = new Document<dynamic>
+            //        {
+            //            Id = "Hello2",
+            //            Content = new
+            //            {
+            //                name = "Couchbase"
+            //            }
+            //        };
 
-                    var upsert = bucket.Upsert(document);
-                    if (upsert.Success)
-                    {
-                        var get = bucket.GetDocument<dynamic>(document.Id);
-                        document = get.Document;
-                        return document.Id + " " + document.Content.name;
-                    }
-                }
-            }
+            //        var upsert = bucket.Upsert(document);
+            //        if (upsert.Success)
+            //        {
+            //            var get = bucket.GetDocument<dynamic>(document.Id);
+            //            document = get.Document;
+            //            return document.Id + " " + document.Content.name;
+            //        }
+            //    }
+            //}
 
             return "";
         }
