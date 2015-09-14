@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entity.Collection
 {
-    public class Book : BaseEntity
+    public class BaseEntity
     {
-        public string title { get; set; }
+        public string _id { get; set; }
+        public DateTime CREDate { get; set; }
+        public DateTime UPDDate { get; set; }
     }
 }

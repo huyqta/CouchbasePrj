@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entity.Collection
 {
-    public class Publisher
+    public class Publisher : BaseEntity
     {
         const string collection = "publisher";
-        string _id { get; set; }
         string name { get; set; }
         List<BookOnPublisher> books { get; set; }
     }
 
-    public class BookOnPublisher
+    public class BookOnPublisher : BaseEntity
     {
         string title { get; set; }
     }

@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collection\BaseEntity.cs" />
     <Compile Include="Collection\Book.cs" />
     <Compile Include="Collection\Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

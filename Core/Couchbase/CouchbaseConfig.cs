@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 using Couchbase;
 using System.Configuration;
 using Couchbase.Configuration.Client;
+using Couchbase.Core;
 
 namespace Core.Couchbase
 {
     public static class CouchbaseConfig
     {
         private static ClientConfiguration _config;
-        public static Cluster CbCluster;
+        private static Cluster CbCluster;
+        private static IBucket iBucket;
 
         public static string CouchbaseBucket = ConfigurationManager.AppSettings["CouchbaseBucket"];
 
@@ -70,8 +72,27 @@ namespace Core.Couchbase
         {
             get
             {
-                var cluster = new Cluster();
-                return new Cluster("couchbaseClients/couchbase");
+                var cluster = new Cluster("couchbaseClients/couchbase");
+                return cluster;
+            }
+        }
+
+        public static IBucket Bucket
+        {
+            get
+            {
+                if (iBucket == null)
+                {
+                    using (var cluster = new Cluster("couchbaseClients/couchbase"))
+                    {
+                        var bucket = cluster.OpenBucket();
+                        return bucket;
+                    }
+                }
+                else
+                {
+                    return iBucket;
+                }
             }
         }
     }
