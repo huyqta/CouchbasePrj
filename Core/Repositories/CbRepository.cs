@@ -101,7 +101,7 @@ namespace Core.Repositories
 
             //var bucket = cluster.OpenBucket();
 
-
+            var bucket = Couchbase.CouchbaseConfig.Cluster.OpenBucket();
 
             var result = Couchbase.CouchbaseConfig.Bucket.Insert<TEntity>(doc._id, doc);
             return result.Success;
