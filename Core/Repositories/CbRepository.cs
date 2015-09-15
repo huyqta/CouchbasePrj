@@ -66,46 +66,10 @@ namespace Core.Repositories
 
         public virtual bool Insert(TEntity doc)
         {
-            //List<Uri> listServer = new List<Uri>();
-            ////foreach (var server in CouchbaseServer.Split(';'))
-            ////{
-            //listServer.Add(new Uri("http://localhost:8091/pools"));
-            ////}
-
-            //var config = new ClientConfiguration
-            //{
-            //    Servers = listServer,
-            //    UseSsl = false,
-            //    //DefaultOperationLifespan = 1000,
-
-            //    BucketConfigs = new Dictionary<string, BucketConfiguration>
-            //            {
-            //                {"default", new BucketConfiguration
-            //                    {
-            //                        BucketName = "default",
-            //                        UseSsl = false,
-            //                        Password = "",
-            //                        //DefaultOperationLifespan = 2000,
-            //                        PoolConfiguration = new PoolConfiguration
-            //                        {
-            //                            MaxSize = 10,
-            //                            MinSize = 5,
-            //                            SendTimeout = 12000
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //};
-
-            //var cluster = new Cluster(config);
-
-            //var bucket = cluster.OpenBucket();
-
             var bucket = Couchbase.CouchbaseConfig.Cluster.OpenBucket();
 
-            var result = Couchbase.CouchbaseConfig.Bucket.Insert<TEntity>(doc._id, doc);
+            var result = bucket.Insert<TEntity>(doc._id, doc);
             return result.Success;
-            //return true;
         }
 
         public virtual TEntity GetDocument(string id)

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Services
+namespace Core.Services.Interfaces
 {
-    public interface IBookServices
+    public interface IPublisherServices
     {
-        void InsertBook(Book book);
+        void InsertPublisher(Publisher publisher);
     }
 }

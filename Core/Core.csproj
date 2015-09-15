@@ -64,8 +64,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CbRepository.cs" />
     <Compile Include="Repositories\ICbRepository.cs" />
+    <Compile Include="Services\PublisherServices.cs" />
     <Compile Include="Services\BookServices.cs" />
-    <Compile Include="Services\IBookServices.cs" />
+    <Compile Include="Services\Interfaces\IBookServices.cs" />
+    <Compile Include="Services\Interfaces\IPublisherServices.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>

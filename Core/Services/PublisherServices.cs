@@ -8,17 +8,17 @@ using Core.Services.Interfaces;
 
 namespace Core.Services
 {
-    public class BookServices : IBookServices
+    public class PublisherServices : IPublisherServices
     {
         private UnitOfWork.UnitOfWork uow;
 
-        public BookServices()
+        public PublisherServices()
         {
             uow = new UnitOfWork.UnitOfWork("default");
         }
-        public void InsertBook(Book book)
+        public void InsertPublisher(Publisher publisher)
         {
-            uow.CbRepository<Book>().Insert(book);
+            uow.CbRepository<Publisher>().Insert(publisher);
         }
     }
 }

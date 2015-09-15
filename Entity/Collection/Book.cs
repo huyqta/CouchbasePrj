@@ -8,6 +8,8 @@ namespace Entity.Collection
 {
     public class Book : BaseEntity
     {
+        public string collection = "book";
         public string title { get; set; }
+        public string publisher { get; set; }
     }
 }

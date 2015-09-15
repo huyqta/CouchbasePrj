@@ -8,13 +8,13 @@ namespace Entity.Collection
 {
     public class Publisher : BaseEntity
     {
-        const string collection = "publisher";
-        string name { get; set; }
-        List<BookOnPublisher> books { get; set; }
+        public string collection = "publisher";
+        public string name { get; set; }
+        public List<string> books { get; set; }
     }
 
     public class BookOnPublisher : BaseEntity
     {
-        string title { get; set; }
+        public string title { get; set; }
     }
 }
